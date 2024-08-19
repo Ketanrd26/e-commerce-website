@@ -1,0 +1,109 @@
+.signup-cont{
+    height: 80svh;
+    padding: 20px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+  form{
+    height: 100%;
+    width: var(--max-width);
+    border-radius: calc(var(--unit)/2);
+  box-shadow: var(--shadow);
+    background-color: var(--body_background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .signup-page{
+        width: 100%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        gap: var(--gap);
+
+        .top{
+            width: 100%;
+            display:flex ;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: calc(var(--gap)/2);
+
+            h2{
+                color: var(--card-color);
+                font-size: calc(var(--unit)*2);
+            }
+
+            p{
+                color: var(--card-color);
+                font-size: var(--unit);
+            }
+        }
+        .middle{
+            width: 100%;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            gap: calc(var(--gap)/2);
+
+            .name{
+                width: 50%;
+                display: flex;
+                flex-direction: column;
+                position: relative;
+                
+
+                input{
+                    width: 100%;
+                    height: calc(var(--unit)*2);
+                    border-radius: calc(var(--unit)/2);
+                    border: none;
+                    outline: 1px solid grey;
+                    padding: 20px;
+                }
+
+                label{
+                    position: absolute;
+                    top: 12px;
+                    left: 10px;
+                }
+
+                input:focus + label,
+          input:not(:placeholder-shown) + label {
+            top: -10px;
+            left: 20px;
+            font-size: 12px;
+            background-color: white;
+          }
+                
+            }
+        }
+        .bottom{
+            width: 100%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+            button{
+                padding: 10px 20px;
+                background-color: var(--body-background);
+                border: 1px solid var(--card-color);
+                color: var(--card-color);
+                font-size: var(--unit);
+                border-radius: calc(var(--unit)/2);
+               transition: all 0.5s  ease-in-out;
+
+                &:hover{
+                    background-color: var(--card-color);
+                    color: var(--btn-color);
+                }
+            }
+        }
+    }
+  }
+}
+
+

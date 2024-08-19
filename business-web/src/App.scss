@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Gentium+Book+Plus:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+@import url("https://api.fontshare.com/v2/css?f[]=satoshi@301&display=swap");
+@import url("https://db.onlinewebfonts.com/c/f1fcc5aed1e20fc0cdb9f8a7573625bd?family=Integral+CF+Regular");
+
+
+:root{
+  --accent:#000000;
+  --accent2:#F2F0F1;
+  --gap:24px;
+  --unit:24px;
+  --max-width:1240px;
+  --grey:#F0F0F0;
+  --trans:all 3s ease-in-out;
+--shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+  --body_background:white;
+  --body_color:black;
+  --card-color:black;
+  --btn-color:white;
+  
+}
+
+[data-theme= "dark"]{
+--body_background: black;
+--body_color:white;
+--card-color:white;
+--btn-color:black;
+
+}
+
+*,*::after,*::before{
+padding: 0;
+margin: 0;
+box-sizing: border-box;
+}
+
+.parent{
+  width: 100%;
+
+
+
+
+  .cont{
+    width: var(--max-width);
+    margin: auto;
+  }
+}
+
+
+.btn{
+ padding: 16px 54px;
+  border-radius: 62px;
+  background-color: var(--card-color);
+  color: var(--btn-color);
+  border: none;
+  gap: 12px;
+}
+
+a{
+  text-decoration: none;
+}
+
+// .font-heading{
+//   font-family: "Gentium Book Plus", serif;
+//         font-weight: 700;
+//         font-style: normal;
+//         color: var(--accent);
+
+// }
+p{
+  color: var(--body_color);
+  font-family: 'Satoshi', sans-serif;
+
+}
+h1,h2,h3,h4,h5,h6{
+  color: var(--body_color);
+  font-family: "Integral CF Regular";
+}
+
+.bg-img-cover{
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+.bg-img-contain{
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+::-ms-input-placeholder {
+  color: var(--body_color);
+}

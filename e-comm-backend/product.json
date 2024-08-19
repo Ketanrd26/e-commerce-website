@@ -1,0 +1,85 @@
+{
+    "products": [
+      {
+        "id":1,
+        "name": "Wireless Mouse",
+        "title": "Ergonomic Wireless Mouse",
+        "price": 29.99,
+        "category": "Electronics",
+        "image": "https://example.com/images/wireless_mouse.jpg"
+      },
+      {
+        "id":2,
+        "name": "Mechanical Keyboard",
+        "title": "RGB Mechanical Keyboard",
+        "price": 79.99,
+        "category": "Electronics",
+        "image": "https://example.com/images/mechanical_keyboard.jpg"
+      },
+      {
+        "id":3,
+        "name": "Bluetooth Headphones",
+        "title": "Noise Cancelling Bluetooth Headphones",
+        "price": 99.99,
+        "category": "Electronics",
+        "image": "https://example.com/images/bluetooth_headphones.jpg"
+      },
+      {
+        "id":4,
+        "name": "Gaming Chair",
+        "title": "Comfortable Gaming Chair",
+        "price": 199.99,
+        "category": "Furniture",
+        "image": "https://example.com/images/gaming_chair.jpg"
+      },
+      {
+        "id":5,
+        "name": "Smart Watch",
+        "title": "Fitness Tracker Smart Watch",
+        "price": 49.99,
+        "category": "Wearables",
+        "image": "https://example.com/images/smart_watch.jpg"
+      },
+      {
+        "id":6,
+        "name": "4K Monitor",
+        "title": "27-inch 4K UHD Monitor",
+        "price": 299.99,
+        "category": "Electronics",
+        "image": "https://example.com/images/4k_monitor.jpg"
+      },
+      {
+        "id":7,
+        "name": "Laptop Stand",
+        "title": "Adjustable Laptop Stand",
+        "price": 39.99,
+        "category": "Accessories",
+        "image": "https://example.com/images/laptop_stand.jpg"
+      },
+      {
+        "id":8,
+        "name": "Portable Charger",
+        "title": "10000mAh Portable Charger",
+        "price": 19.99,
+        "category": "Accessories",
+        "image": "https://example.com/images/portable_charger.jpg"
+      },
+      {
+        "id":9,
+        "name": "Desk Lamp",
+        "title": "LED Desk Lamp with USB Charging Port",
+        "price": 24.99,
+        "category": "Home",
+        "image": "https://example.com/images/desk_lamp.jpg"
+      },
+      {
+        "id":10,
+        "name": "Smart Thermostat",
+        "title": "WiFi Smart Thermostat",
+        "price": 129.99,
+        "category": "Home",
+        "image": "https://example.com/images/smart_thermostat.jpg"
+      }
+    ]
+  }
+  

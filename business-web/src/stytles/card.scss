@@ -1,0 +1,27 @@
+
+       
+        .card-container{
+            width: calc(var(--max-width)/5);
+            height: 300px;
+            background-color: var(--body_background);
+            border: 1px solid var( --body_color);
+            box-shadow: var(--shadow);
+            display: flex;
+            flex-direction: column;
+            gap: calc(var(--gap)/3);
+           border-radius: calc(var(--gap)/2);
+           padding: 10px;
+            img{
+                height: 50%;
+                background-color: black;
+           border-radius: calc(var(--gap)/2);
+
+            }
+
+            p,h5,h2{
+               color: var(--card-color); 
+            }
+
+
+           
+        }

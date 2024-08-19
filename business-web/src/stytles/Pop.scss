@@ -1,0 +1,71 @@
+.pop {
+  width: 100%;
+  height: 100svh;
+  position: fixed;
+  top: 0;
+  z-index: 99;
+  background-color: rgba(179, 179, 179, 0.568);
+  backdrop-filter: blur(10px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  .close-btn {
+    width: 40px;
+    aspect-ratio: 1;
+    background-color: white;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: calc(-1 * var(--unit)/2 * 4);
+    top: 0;
+    svg {
+      font-size: 20px;
+    }
+  }
+  .card {
+    width: auto;
+    height: auto;
+    background-color: white;
+    box-shadow: var(--shadow);
+    border-radius: var(--unit);
+    max-width: 1200px;
+    min-width: 700px;
+    position: relative;
+    padding: calc(var(--unit) / 2);
+
+    .header-section {
+      display: flex;
+      width: 100%;
+      align-items: center;
+      justify-content: space-between;
+      border-bottom: 1px solid black;
+      padding: 10px;
+      .header {
+        display: flex;
+
+        p {
+          font-size: 20px;
+        }
+      }
+      .headers-btn{
+        display: flex;
+        gap: calc(var(--gap)/2);
+
+
+        button{
+            background-color: var(--body_color);
+        color: var(--btn-color);
+        padding: 10px;
+        border-radius: 25px;
+        border: none;
+        display: flex;
+        justify-content: center;
+        
+        }
+      }
+    }
+  }
+}

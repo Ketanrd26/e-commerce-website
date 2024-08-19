@@ -2,6 +2,8 @@ import UserData from "../model/User.js";
 import nodemailer from "nodemailer";
 import dotenv from "dotenv";
 import otpGenerator from "../controller/otpDeclared.js";
+import jwt from "jsonwebtoken";
+import { verifyOtp } from "./otpController.js";
 
 dotenv.config();
 
@@ -22,6 +24,25 @@ export const signUp = async (req, res) => {
     }
 
     const otpPin = otpGenerator();
+    
+
+    const newUser = new UserData({
+      name,
+      email,
+      password,
+      otp: otpPin,
+    });
+
+    await newUser.save();
+
+    const secretKey = process.env.SECRET_KEY;
+    const token = jwt.sign(
+      { email: newUser.email, id: newUser._id },
+      secretKey,
+    );
+
+    newUser.token = token;
+    await newUser.save();
 
     const transporter = nodemailer.createTransport({
       service: "gmail",
@@ -46,23 +67,13 @@ export const signUp = async (req, res) => {
           message: "Failed to send welcome email",
           error: error.message,
         });
-      } else {
-        console.log("Email sent: " + info.response);
       }
     });
-
-    const newUser = new UserData({
-      name,
-      email,
-      password,
-      otp: otpPin, // Save OTP along with user data
-    });
-
-    await newUser.save();
 
     res.status(200).json({
       status: "success",
       message: "User created successfully. OTP sent to your email.",
+      token: token,
     });
 
   } catch (error) {
@@ -70,3 +81,8 @@ export const signUp = async (req, res) => {
     res.status(500).json({ message: "Error", error });
   }
 };
+
+
+export const login = async (req,res)=>{
+  
+}

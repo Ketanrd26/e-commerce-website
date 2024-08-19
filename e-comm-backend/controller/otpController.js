@@ -4,6 +4,8 @@ export const verifyOtp = async (req, res) => {
   try {
     const { email, otp } = req.body;
 
+
+
     if (!email || !otp) {
       console.log("Missing email or OTP");
       return res.status(400).json({
@@ -34,10 +36,10 @@ export const verifyOtp = async (req, res) => {
       });
     }
 
-    
+  
     user.otp = undefined; // Use undefined instead of null
     await user.save();
-
+   
     res.status(200).json({
       status: "success",
       message: "OTP verified successfully. You are now registered.",

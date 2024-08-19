@@ -18,10 +18,10 @@ const useSchema = new mongoose.Schema({
         type:String,
         required: false,
       },
-    //   isVerified: {
-    //     type: Boolean,
-    //     default: false,
-    //   },
+      isVerified: {
+        type: Boolean,
+        default: false,
+      },
 });
 const userModel = mongoose.model("userData", useSchema);
 

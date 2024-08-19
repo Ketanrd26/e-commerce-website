@@ -14,7 +14,7 @@ export const verifyOtp = async (req, res) => {
       });
     }
 
-    const user = await UserData.findOne({ email, otp });
+    const user = await UserData.findOne({ email, otp, isVerified : false });
     console.log("User found:", user);
 
     if (!user) {
@@ -36,10 +36,10 @@ export const verifyOtp = async (req, res) => {
       });
     }
 
-  
+    user.isVerified = true
     user.otp = undefined; // Use undefined instead of null
     await user.save();
-   
+    
     res.status(200).json({
       status: "success",
       message: "OTP verified successfully. You are now registered.",

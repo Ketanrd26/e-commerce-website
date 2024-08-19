@@ -8,6 +8,7 @@ import bookRoute from "./routes/book_route.js"
 import productData from './product.json' assert { type: 'json' };
 import userRoute from "./routes/userRoute.js"
 import otpRoute from "./routes/otpRoute.js"
+import { cartRoute } from "./routes/cartRoute.js";
 
 
 const app = express();
@@ -25,6 +26,8 @@ app.use(express.json());
 app.use("/book", bookRoute);
 app.use("/user",userRoute )
 app.use("/verifyotp", otpRoute); 
+
+app.use("/addToCart", cartRoute)
 const port = process.env.PORT || 4001;
 
 app.get("/", (req, res) => {

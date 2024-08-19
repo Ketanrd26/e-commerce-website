@@ -25,7 +25,6 @@ export const signUp = async (req, res) => {
 
     const otpPin = otpGenerator();
     
-
     const newUser = new UserData({
       name,
       email,
@@ -38,7 +37,7 @@ export const signUp = async (req, res) => {
     const secretKey = process.env.SECRET_KEY;
     const token = jwt.sign(
       { email: newUser.email, id: newUser._id },
-      secretKey,
+      secretKey
     );
 
     newUser.token = token;
@@ -75,14 +74,36 @@ export const signUp = async (req, res) => {
       message: "User created successfully. OTP sent to your email.",
       token: token,
     });
-
   } catch (error) {
     console.error("Error during signup:", error);
     res.status(500).json({ message: "Error", error });
   }
 };
 
-
-export const login = async (req,res)=>{
+export const login = async (req, res) => {
+  try {
+    const { email, password } = req.body;
   
-}
+  const existUser = await UserData.findOne({email : email, password:password});
+ 
+
+  if (!existUser) {
+    res.status(400).json({
+      message: "invaild credintials",
+    });
+  }
+
+  const secretKey = process.env.SECRET_KEY;
+  const token = jwt.sign({email: existUser.email, id:existUser._id},secretKey);
+  res.status(200).json({
+    message:"login successfully",
+    token : token
+  })
+  
+
+  } catch (error) {
+    res.status(500).json({message:error})
+  }
+   
+
+};

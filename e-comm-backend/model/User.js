@@ -14,6 +14,10 @@ const useSchema = new mongoose.Schema({
         type: String,
         required: true,
       },
+      cartItem :{
+        type:Array,
+        default:[]
+      },
       otp: {
         type:String,
         required: false,

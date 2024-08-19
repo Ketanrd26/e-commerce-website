@@ -12,7 +12,7 @@ export const authenticateToken = (req, res, next) => {
   try {
     const secretKey = process.env.SECRET_KEY;
     const decoded = jwt.verify(token, secretKey);
-    req.user = decoded; 
+    req.user = decoded;
     next();
   } catch (error) {
     res.status(400).json({ message: "Invalid token." });

@@ -34,16 +34,7 @@ export const cartList = async (req, res) => {
         };
 
       
-        const updatedCart = await cart.findOneAndUpdate(
-            { user: user._id },
-            { $push: { cartItems: cartItem } },
-            { new: true, upsert: true }
-        );
-
-        res.status(200).json({
-            data: updatedCart,
-            message: "Cart updated successfully",
-        });
+       
     } catch (error) {
         res.status(500).json({
             message: error.message || "Internal server error",

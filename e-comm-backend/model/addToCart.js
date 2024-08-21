@@ -14,11 +14,6 @@ const cartModel = new mongoose.Schema({
     },
   ],
 
-  user:{
-    type:mongoose.Types.ObjectId,
-    ref:"user",
-    required:true
-  }
 });
 
 export const cart = mongoose.model("CartList", cartModel);
